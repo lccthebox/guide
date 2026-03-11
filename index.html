@@ -384,7 +384,6 @@
     .club-join-btn:hover { background: #1d4ed8; }
     .club-join-kakao { background: #FEE500; color: #3C1E1E; }
     .club-join-kakao:hover { background: #f0d800; }
-    @media (max-width: 640px) { .club-grid { grid-template-columns: 1fr; } }
 
     
     /* ── 출결 ── */
@@ -598,71 +597,10 @@
     .wifi-label { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: .06em; width: 24px; flex-shrink: 0; }
     .wifi-val { font-size: 14px; font-weight: 500; color: var(--gray-900); word-break: break-all; }
 
-    @media(max-width:860px){
-      .sidebar { display: none; }
-      main, footer { margin-left: 0; }
-      .hero { padding: 40px 20px 36px; }
-      section { padding: 40px 20px 40px; }
-      footer { padding: 20px; }
-
-      /* 히어로 */
-      .hero h2 { font-size: 34px; }
-      .hero-links { gap: 8px; }
-      .hero-link-btn { font-size: 12px; padding: 8px 14px; }
-
-      /* 섹션 타이틀 */
-      .sec-title { font-size: 22px; }
-
-      /* 선생님 섹션 */
-      .fac-grid, .prep-grid { grid-template-columns: 1fr 1fr; }
-      .fee-grid { grid-template-columns: 1fr 1fr; }
-      .club-grid { grid-template-columns: 1fr; }
-      .teacher-row { grid-template-columns: 48px 1fr; }
-      .t-meta { display: none; }
-
-      /* 시간표 */
-      .sched-link-wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
-
-      /* 수강 규정 */
-      .rules-wrap { grid-template-columns: 1fr; }
-      .rules-block-tip { grid-column: 1; }
-
-      /* 수강료 */
-      .fees-banner { flex-direction: column; gap: 8px; }
-      .fees-disc-grid { gap: 8px; }
-      .fees-disc-item { flex-direction: column; align-items: flex-start; gap: 8px; }
-
-      /* 편의시설 */
-      .fac-grid { grid-template-columns: 1fr !important; }
-      .svc-grid { grid-template-columns: 1fr; }
-
-      /* 클럽 */
-      .club-grid { grid-template-columns: 1fr; }
-      .club-photo { height: 180px; }
-
-      /* 푸터 */
-      footer { flex-direction: column; gap: 14px; text-align: center; }
-      .footer-links { justify-content: center; }
-    }
+    
 
     /* 모바일 전용 추가 최적화 */
-    @media(max-width:480px){
-      .hero h2 { font-size: 28px; }
-      .hero-links { flex-direction: column; }
-      .hero-link-btn { width: 100%; justify-content: center; }
-      .fees-banner-left { flex-direction: column; align-items: flex-start; gap: 6px; }
-      .fees-banner-note { display: none; }
-      .svc-grid { grid-template-columns: 1fr; }
-      .rules-wrap { grid-template-columns: 1fr; }
-      .fac-service-grid { grid-template-columns: 1fr; }
-      .t-grid { grid-template-columns: 1fr 1fr !important; }
-      .sec-title { font-size: 20px; }
-      .fac-grid { grid-template-columns: 1fr !important; }
-      .fees-disc-amount-badge { width: 100%; text-align: center; }
-      .club-info-row { flex-direction: column; gap: 2px; }
-      .club-info-label { min-width: unset; }
-      .sched-link-btn { width: 100%; justify-content: center; }
-    }
+    
 
     /* ── 수강 및 이용 규정 ── */
     .rules-wrap {
@@ -703,10 +641,6 @@
       font-style: normal; font-weight: 600; color: var(--gray-700);
     }
     .rules-block-tip .rules-item-text em { color: #92400e; }
-    @media (max-width: 640px) {
-      .rules-wrap { grid-template-columns: 1fr; }
-      .rules-block-tip { grid-column: 1; }
-    }
 
 
     
@@ -766,7 +700,6 @@
     }
     .svc-insta-link:hover { opacity: 1; }
     .svc-note { font-size: 11px; color: var(--gray-400); }
-    @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
 
 
     /* ── 시간표 ── */
@@ -897,6 +830,140 @@
       box-shadow: 0 2px 10px rgba(225,48,108,0.12);
     }
 
+
+    /* ── 영상 썸네일 ── */
+    .t-thumb-wrap {
+      position: relative; border-radius: 10px; overflow: hidden;
+      cursor: pointer; margin-bottom: 6px;
+    }
+    .t-thumb-img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    .t-thumb-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.3);
+      font-size: 28px; color: #fff;
+      transition: background .2s;
+    }
+    .t-thumb-wrap:hover .t-thumb-play { background: rgba(0,0,0,0.5); }
+    .t-thumb-hint {
+      font-size: 11px; color: var(--gray-400);
+      text-align: center; margin-bottom: 10px;
+    }
+
+
+    /* ═══════════════════════════════════
+       모바일 레이아웃 (860px 이하)
+    ═══════════════════════════════════ */
+    @media(max-width:860px) {
+
+      /* 레이아웃 */
+      .sidebar { display: none; }
+      main, footer { margin-left: 0; }
+      .hero { padding: 36px 20px 32px; }
+      section { padding: 36px 20px 36px; }
+      footer { padding: 20px; flex-direction: column; gap: 12px; text-align: center; }
+      .footer-links { justify-content: center; flex-wrap: wrap; }
+
+      /* 히어로 */
+      .hero h2 { font-size: 32px; letter-spacing: -.04em; line-height: 1.1; }
+      .hero-kicker { font-size: 11px; }
+      .hero p { font-size: 13.5px; line-height: 1.7; }
+      .hero-links { gap: 8px; margin-top: 20px; }
+      .hero-link-btn { font-size: 12.5px; padding: 9px 16px; }
+
+      /* 섹션 공통 */
+      .sec-eyebrow { font-size: 10px; }
+      .sec-title { font-size: 21px; }
+      .sec-sub { font-size: 13px; }
+
+      /* 선생님 카드 */
+      .t-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .t-card { padding: 14px 12px; }
+      .t-card-av { width: 44px !important; height: 44px !important; }
+      .t-card-name { font-size: 13px !important; }
+      .t-card-tag { font-size: 10px !important; }
+      .t-sch-lbl, .t-sch-val { font-size: 11px !important; }
+      .t-thumb-img { aspect-ratio: 16/9; }
+      .t-thumb-hint { font-size: 10px; }
+
+      /* 시간표 */
+      .sched-link-wrap { flex-direction: column; align-items: stretch; gap: 8px; }
+      .sched-link-btn { justify-content: center; }
+      .sched-link-note { font-size: 11.5px; }
+
+      /* 수강 규정 */
+      .rules-wrap { grid-template-columns: 1fr; }
+      .rules-block-tip { grid-column: 1; }
+      .rules-item-label { font-size: 12px; }
+      .rules-item-text { font-size: 12px; }
+
+      /* 수강료 */
+      .fees-banner { flex-direction: column; gap: 10px; padding: 16px; }
+      .fees-banner-note { display: none; }
+      .fees-method-title { font-size: 12.5px; }
+      .fees-method-desc { font-size: 11.5px; }
+      .fees-disc-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .fees-disc-amount-badge { font-size: 12px; }
+      .fees-disc-title { font-size: 13px; }
+      .fees-disc-sub { font-size: 11.5px; }
+      .fees-disc-footer { font-size: 11px; }
+
+      /* 편의시설 */
+      .fac-grid { grid-template-columns: 1fr !important; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .svc-name { font-size: 13px; }
+      .svc-desc { font-size: 12px; }
+      .svc-partner-text { font-size: 12px; }
+
+      /* 클럽 */
+      .club-grid { grid-template-columns: 1fr; }
+      .club-photo { height: 200px; }
+      .club-title { font-size: 15px; }
+      .club-info-row { font-size: 12.5px; }
+      .club-desc-item { font-size: 12px; }
+
+      /* 제공 서비스 */
+      .svc-header h3 { font-size: 14px; }
+
+      /* FAQ */
+      .faq-q { font-size: 13.5px !important; }
+      .faq-body-inner { font-size: 13px !important; padding: 0 16px 16px 16px !important; }
+    }
+
+    /* ═══════════════════════════════════
+       소형 모바일 (480px 이하)
+    ═══════════════════════════════════ */
+    @media(max-width:480px) {
+
+      /* 히어로 */
+      .hero { padding: 28px 16px 28px; }
+      .hero h2 { font-size: 26px; }
+      .hero-links { flex-direction: column; }
+      .hero-link-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+
+      /* 섹션 */
+      section { padding: 28px 16px 28px; }
+      .sec-title { font-size: 19px; }
+
+      /* 선생님 카드 */
+      .t-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+      .t-card { padding: 10px 8px; }
+      .t-card-av { width: 36px !important; height: 36px !important; }
+      .t-card-name { font-size: 11.5px !important; }
+
+      /* 수강료 */
+      .fees-method-card { padding: 11px 12px; }
+      .fees-disc-amount-badge { width: 100%; text-align: center; box-sizing: border-box; }
+
+      /* 클럽 */
+      .club-info-row { flex-direction: column; gap: 1px; }
+      .club-info-label { min-width: unset; }
+      .club-join-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+
+      /* FAQ */
+      .faq-q { padding: 14px 16px !important; font-size: 13px !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -994,7 +1061,12 @@
       </div>
       <div class="t-grid">
 
-        <div class="t-card" onclick="toggleVideo(this)">
+        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="R_SkUMBUbBA">       
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/R_SkUMBUbBA/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/james.jpg" alt="James" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">James · 제임스</div><span class="t-card-tag">강의실 701호</span>
           <a href="https://www.instagram.com/james_real_english/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
@@ -1004,7 +1076,12 @@
           </div>
         </div>
 
-        <div class="t-card" onclick="toggleVideo(this)">
+        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="Jbu6g7Rf-O0">       
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/Jbu6g7Rf-O0/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/chris.jpg" alt="Chris" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Chris · 크리스</div><span class="t-card-tag">강의실 803호</span></div></div>
           <div class="t-card-sch">
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">실용</span><span class="t-sch-val">월–목 · 오전 8:30</span></div>
@@ -1013,7 +1090,12 @@
           </div>
         </div>
 
-        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="H8Mln_26wk4">
+        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="JEPtbNPnq5E">
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/JEPtbNPnq5E/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/cerline.jpg" alt="Cerline" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Cerline · 설린</div><span class="t-card-tag">강의실 704호</span>
           <a href="https://www.instagram.com/cerline_english/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
@@ -1021,10 +1103,15 @@
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">문법B</span><span class="t-sch-val">월수 오전 10:30 / 화목 오후 6:50</span></div>
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">기초도전</span><span class="t-sch-val">월수 오후 12:00 · 오후 6:50 / 화목 오전 10:30 · 오후 8:30</span></div>
           
-          <div class="t-card-play"><div class="t-card-play-icon">▶</div>선생님 만나보기 👋</div></div>
+          </div>
         </div>
 
-        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="vWWg2CAKDSE">
+        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="4QHA7o6tNBU">
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/4QHA7o6tNBU/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/tina.jpg" alt="Tina" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Tina · 티나</div><span class="t-card-tag">강의실 805호</span>
           <a href="https://www.instagram.com/tina_trendy_english_/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
@@ -1032,10 +1119,15 @@
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">기초2</span><span class="t-sch-val">월수 오전 10:30 · 오후 8:30 / 화목 오후 6:50</span></div>
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">패턴</span><span class="t-sch-val">화목 오후 8:30</span></div>
           
-          <div class="t-card-play"><div class="t-card-play-icon">▶</div>선생님 만나보기 👋</div></div>
+          </div>
         </div>
 
-        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="ZuITvUT0I9c">
+        <div class="t-card has-video" onclick="toggleVideo(this)" data-video="ht-YBjqqdVs">
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/ht-YBjqqdVs/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/riley.jpg" alt="Riley" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Riley · 라일리</div><span class="t-card-tag">강의실 801호</span>
           <a href="https://www.instagram.com/riley_right_english/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
@@ -1043,20 +1135,30 @@
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">롸잇B</span><span class="t-sch-val">화목 오후 8:30 / 토일 오전 10:00</span></div>
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">나우</span><span class="t-sch-val">월수 오후 8:30 / 화목 오후 6:50 / 토일 오전 11:30</span></div>
           
-          <div class="t-card-play"><div class="t-card-play-icon">▶</div>선생님 만나보기 👋</div></div>
+          </div>
         </div>
 
         <div class="t-card has-video" onclick="toggleVideo(this)" data-video="Wm96QPO20kM">
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/Wm96QPO20kM/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/jane.jpg" alt="Jane" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Jane · 제인</div><span class="t-card-tag">강의실 701호</span>
           <a href="https://www.instagram.com/janethebox/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">기초1</span><span class="t-sch-val">월수 오전 10:30 · 오후 6:50 / 화목 오후 12:00 · 오후 8:30</span></div>
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">기초2</span><span class="t-sch-val">월수 오후 8:30 / 화목 오후 6:50</span></div>
           </div>
-          <div class="t-card-play"><div class="t-card-play-icon">▶</div>선생님 만나보기 👋</div>
+          
         </div>
 
         <div class="t-card has-video" onclick="toggleVideo(this)" data-video="plCZz1_-Ckw">
+          <div class="t-thumb-wrap">
+            <img src="https://img.youtube.com/vi/plCZz1_-Ckw/mqdefault.jpg" alt="영상 미리보기" class="t-thumb-img"/>
+            <div class="t-thumb-play">▶</div>
+          </div>
+          <div class="t-thumb-hint">탭하면 YouTube에서 재생됩니다</div>
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/courtney.jpg" alt="Courtney" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Courtney · 코트니</div><span class="t-card-tag">강의실 807호</span>
           <a href="https://www.instagram.com/englishwithcourtney/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
@@ -1064,15 +1166,15 @@
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">Go-to1</span><span class="t-sch-val">화목 오후 10:30 · 오후 8:30 / 월수 오후 6:50</span></div>
             <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">Go-to2</span><span class="t-sch-val">월수 오후 8:30 / 화목 오후 6:50</span></div>
           
-          <div class="t-card-play"><div class="t-card-play-icon">▶</div>선생님 만나보기 👋</div></div>
+          </div>
         </div>
 
         <div class="t-card" onclick="toggleVideo(this)">
           <div class="t-card-top"><div class="t-card-av"><img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/diana.jpg" alt="Diana" style="width:100%;height:100%;object-fit:cover;border-radius:0;"/></div><div><div class="t-card-name">Diana · 다이애나</div><span class="t-card-tag">강의실 704호</span>
           <a href="https://www.instagram.com/diana_daily_english/" target="_blank" class="t-insta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="url(#ig2)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig3)"/><defs><linearGradient id="ig1" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#f09433"/><stop offset="0.4" stop-color="#e6683c"/><stop offset="0.6" stop-color="#dc2743"/><stop offset="0.8" stop-color="#cc2366"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig2" x1="8" y1="16" x2="16" y2="8"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient><linearGradient id="ig3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#f09433"/><stop offset="1" stop-color="#bc1888"/></linearGradient></defs></svg></a></div></div>
           <div class="t-card-sch">
-            <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">기초</span><span class="t-sch-val">오후 1:00</span></div>
-            <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">중고급</span><span class="t-sch-val">오전 11:30</span></div>
+            <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">기초</span><span class="t-sch-val">주말 오후 1:00</span></div>
+            <div class="t-sch-row"><span class="t-sch-ico">📌</span><span class="t-sch-lbl">중고급</span><span class="t-sch-val">주말 오전 11:30</span></div>
           </div>
         </div>
 
@@ -1361,7 +1463,7 @@
           <div class="club-info-rows">
             <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 일요일 오후 3시</span></div>
             <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 3층 라운지</span></div>
-            <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버 누구나</span></div>
+            <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
             <div class="club-info-row"><span class="club-info-label">💰 참가비</span><span>무료</span></div>
           </div>
           <div class="club-desc-list">
@@ -1470,39 +1572,9 @@
   function toggleVideo(card) {
     const videoId = card.dataset.video;
     if (!videoId) return;
-
-    // 기존 열린 패널 닫기
-    document.querySelectorAll('.video-panel.open').forEach(p => {
-      if (p.closest('.t-card') !== card) {
-        p.classList.remove('open');
-        p.innerHTML = '';
-      }
-    });
-
-    let panel = card.querySelector('.video-panel');
-    if (!panel) {
-      panel = document.createElement('div');
-      panel.className = 'video-panel';
-      card.appendChild(panel);
-    }
-
-    if (panel.classList.contains('open')) {
-      panel.classList.remove('open');
-      setTimeout(() => { panel.innerHTML = ''; }, 350);
-    } else {
-      panel.innerHTML = `
-        <iframe
-          src="https://www.youtube.com/embed/${'${videoId}'}?autoplay=1&mute=0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-        <p class="video-label">▲ 카드를 다시 클릭하면 닫힙니다</p>
-      `;
-      panel.classList.add('open');
-    }
+    window.open('https://youtu.be/' + videoId, '_blank');
   }
-
-
+  
   function openAccount() {
     document.getElementById('account-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';

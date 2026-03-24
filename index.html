@@ -369,7 +369,7 @@
     
     /* ── 클럽 ── */
     .club-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
     }
     .club-card {
       background: #fff; border: 1px solid var(--gray-200);
@@ -946,8 +946,8 @@
       .svc-partner-text { font-size: 12px; }
 
       /* 클럽 */
-      .club-grid { grid-template-columns: 1fr; }
-      .club-photo { height: 200px; }
+      .club-grid { grid-template-columns: 1fr 1fr !important; }
+      .club-photo { height: 160px; }
       .club-title { font-size: 15px; }
       .club-info-row { font-size: 12.5px; }
       .club-desc-item { font-size: 12px; }
@@ -989,6 +989,8 @@
       .club-info-row { flex-direction: column; gap: 1px; }
       .club-info-label { min-width: unset; }
       .club-join-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+
+      .club-grid { grid-template-columns: 1fr !important; }
 
       /* FAQ */
       .faq-q { padding: 14px 16px !important; font-size: 13px !important; }
@@ -1525,6 +1527,27 @@
             <div class="club-desc-item"><strong>Every Sunday 6PM</strong> — Sincheon, Suseongmot, Apsan, Duryu Park, etc.</div>
           </div>
           <a href="https://open.kakao.com/o/g4s4yqii" target="_blank" class="club-join-btn club-join-kakao">카카오톡 오픈채팅 참여하기 →</a>
+        </div>
+      
+
+      <!-- 더박스 하이커스 -->
+      <div class="club-card">
+        <div class="club-photo">
+          <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/hikers.jpg" alt="더박스 하이커스"/>
+          <div class="club-photo-badge">🥾 Outdoor Crew 'HIKERS'</div>
+        </div>
+        <div class="club-body">
+          <h4 class="club-title">더박스 하이커스</h4>
+          <p class="club-subtitle">TheBox Hikers</p>
+          <div class="club-info-rows">
+            <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 토요일 오후 7시</span></div>
+            <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 앞 집결 · 앞산 외 다른 산들</span></div>
+            <div class="club-info-row"><span class="club-info-label">🏃 난이도</span><span>등린이부터 중급자코스까지</span></div>
+            <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
+          </div>
+          <a href="https://open.kakao.com/o/g5aQnZmi" target="_blank" class="club-join-btn club-join-kakao">
+            💬 카카오톡 오픈채팅 참여하기
+          </a>
         </div>
       </div>
 

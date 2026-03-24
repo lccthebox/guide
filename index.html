@@ -367,6 +367,23 @@
     .t-chip strong { color: var(--gray-900); font-weight: 600; }
 
     
+
+    /* ── 클럽 레이아웃 ── */
+    .club-grid-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .club-row-full { width: 100%; }
+    .club-card-wide { display: grid; grid-template-columns: 1fr 1fr; }
+    .club-card-wide .club-photo { height: 100%; min-height: 220px; }
+    .club-card-wide .club-body { display: flex; flex-direction: column; justify-content: center; }
+    .club-row-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
     /* ── 클럽 ── */
     .club-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
@@ -945,8 +962,11 @@
       .svc-desc { font-size: 12px; }
       .svc-partner-text { font-size: 12px; }
 
+
       /* 클럽 */
-      .club-grid { grid-template-columns: 1fr 1fr !important; }
+      .club-card-wide { grid-template-columns: 1fr !important; }
+      .club-card-wide .club-photo { height: 200px; }
+      .club-row-two { grid-template-columns: 1fr 1fr; }
       .club-photo { height: 160px; }
       .club-title { font-size: 15px; }
       .club-info-row { font-size: 12.5px; }
@@ -990,7 +1010,7 @@
       .club-info-label { min-width: unset; }
       .club-join-btn { width: 100%; justify-content: center; box-sizing: border-box; }
 
-      .club-grid { grid-template-columns: 1fr !important; }
+      .club-row-two { grid-template-columns: 1fr !important; }
 
       /* FAQ */
       .faq-q { padding: 14px 16px !important; font-size: 13px !important; }
@@ -1481,79 +1501,73 @@
     <p class="sec-eyebrow">05 · Clubs</p>
     <h2 class="sec-title">더박스 클럽 활동 안내</h2>
     <p class="sec-sub">수업 외 시간, 수강생과 함께하는 자유 참여 프로그램입니다.</p>
-    <div class="club-grid">
+    <div class="club-grid-wrap">
 
-      <!-- 보드게임 클럽 -->
-      <div class="club-card">
-        <div class="club-photo">
-          <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/boardgame.jpg" alt="보드게임 클럽"/>
-          <div class="club-photo-badge">🎲 Board Game Club</div>
-        </div>
-        <div class="club-body">
-          <h4 class="club-title">보드게임 클럽</h4>
-          <p class="club-subtitle">Board Game Club</p>
-          <div class="club-info-rows">
-            <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 일요일 오후 3시</span></div>
-            <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 3층 라운지</span></div>
-            <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
-            <div class="club-info-row"><span class="club-info-label">💰 참가비</span><span>무료</span></div>
+      <!-- 보드게임 클럽 (풀너비 가로형) -->
+      <div class="club-row-full">
+        <div class="club-card club-card-wide">
+          <div class="club-photo">
+            <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/boardgame.jpg" alt="보드게임 클럽"/>
+            <div class="club-photo-badge">🎲 Board Game Club</div>
           </div>
-          <div class="club-desc-list">
-            <div class="club-desc-item"><strong>더박스 멤버라면 누구나 환영</strong> — 보드게임을 몰라도 OK! 놀면서 배우면 됩니다.</div>
-            <div class="club-desc-item"><strong>다양한 게임</strong> — 파티, 전략, 추리 등 계속해서 업데이트 중!</div>
-            <div class="club-desc-item"><strong>새로운 친구들</strong> — 언어와 국적을 넘어 즐거운 사람들과의 만남.</div>
+          <div class="club-body">
+            <h4 class="club-title">보드게임 클럽</h4>
+            <p class="club-subtitle">Board Game Club</p>
+            <div class="club-info-rows">
+              <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 일요일 오후 3시</span></div>
+              <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 3층 라운지</span></div>
+              <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
+              <div class="club-info-row"><span class="club-info-label">💰 참가비</span><span>무료</span></div>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScd4lXQsmV9tMv9JmJ9N5-wvsOh6_9CHMLRcmvpGn_1oWYDhA/viewform?pli=1" target="_blank" class="club-join-btn">참여 신청하기 →</a>
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScd4lXQsmV9tMv9JmJ9N5-wvsOh6_9CHMLRcmvpGn_1oWYDhA/viewform?pli=1" target="_blank" class="club-join-btn">참여 신청하기 →</a>
         </div>
       </div>
 
-      <!-- 러닝크루 -->
-      <div class="club-card">
-        <div class="club-photo">
-          <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/running.jpg" alt="러닝크루"/>
-          <div class="club-photo-badge">🏃 Running Crew 'TRACK'</div>
-        </div>
-        <div class="club-body">
-          <h4 class="club-title">더박스 러닝크루 'TRACK'</h4>
-          <p class="club-subtitle">TheBox Running Crew</p>
-          <div class="club-info-rows">
-            <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 일요일 오후 6시</span></div>
-            <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 앞 집결 · 신천, 수성못, 앞산, 두류공원 등</span></div>
-            <div class="club-info-row"><span class="club-info-label">🏃 거리</span><span>5km 내외</span></div>
-            <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
-          </div>
-          <div class="club-desc-list">
-            <div class="club-desc-item"><strong>신청 방법</strong> — 카카오톡 오픈채팅방 조인 후 가능한 날 투표하기</div>
-            <div class="club-desc-item"><strong>Every Sunday 6PM</strong> — Sincheon, Suseongmot, Apsan, Duryu Park, etc.</div>
-          </div>
-          <a href="https://open.kakao.com/o/g4s4yqii" target="_blank" class="club-join-btn club-join-kakao">카카오톡 오픈채팅 참여하기 →</a>
-        </div>
-      
+      <!-- 러닝크루 + 하이커스 (2열) -->
+      <div class="club-row-two">
 
-      <!-- 더박스 하이커스 -->
-      <div class="club-card">
-        <div class="club-photo">
-          <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/hikers.jpg" alt="더박스 하이커스"/>
-          <div class="club-photo-badge">🥾 Outdoor Crew 'HIKERS'</div>
-        </div>
-        <div class="club-body">
-          <h4 class="club-title">더박스 하이커스</h4>
-          <p class="club-subtitle">TheBox Hikers</p>
-          <div class="club-info-rows">
-            <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 토요일 오후 7시</span></div>
-            <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 앞 집결 · 앞산 외 다른 산들</span></div>
-            <div class="club-info-row"><span class="club-info-label">🏃 난이도</span><span>등린이부터 중급자코스까지</span></div>
-            <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
+        <!-- 러닝크루 -->
+        <div class="club-card">
+          <div class="club-photo">
+            <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/running.jpg" alt="러닝크루"/>
+            <div class="club-photo-badge">🏃 Running Crew 'TRACK'</div>
           </div>
-          <a href="https://open.kakao.com/o/g5aQnZmi" target="_blank" class="club-join-btn club-join-kakao">
-            💬 카카오톡 오픈채팅 참여하기
-          </a>
+          <div class="club-body">
+            <h4 class="club-title">더박스 러닝크루 'TRACK'</h4>
+            <p class="club-subtitle">TheBox Running Crew</p>
+            <div class="club-info-rows">
+              <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 일요일 오후 6시</span></div>
+              <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 앞 집결 · 신천, 수성못, 앞산, 두류공원 등</span></div>
+              <div class="club-info-row"><span class="club-info-label">🏃 거리</span><span>5km 내외</span></div>
+              <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
+            </div>
+            <a href="https://open.kakao.com/o/g4s4yqii" target="_blank" class="club-join-btn club-join-kakao">카카오톡 오픈채팅 참여하기 →</a>
+          </div>
         </div>
+
+        <!-- 더박스 하이커스 -->
+        <div class="club-card">
+          <div class="club-photo">
+            <img src="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/hikers.jpg" alt="더박스 하이커스"/>
+            <div class="club-photo-badge">🥾 Outdoor Crew 'HIKERS'</div>
+          </div>
+          <div class="club-body">
+            <h4 class="club-title">더박스 하이커스</h4>
+            <p class="club-subtitle">TheBox Hikers</p>
+            <div class="club-info-rows">
+              <div class="club-info-row"><span class="club-info-label">📅 일정</span><span>매주 토요일 오후 7시</span></div>
+              <div class="club-info-row"><span class="club-info-label">📍 장소</span><span>더박스 앞 집결 · 앞산 외 다른 산들</span></div>
+              <div class="club-info-row"><span class="club-info-label">🏃 난이도</span><span>등린이부터 중급자코스까지</span></div>
+              <div class="club-info-row"><span class="club-info-label">👥 대상</span><span>더박스 멤버만</span></div>
+            </div>
+            <a href="https://open.kakao.com/o/g5aQnZmi" target="_blank" class="club-join-btn club-join-kakao">💬 카카오톡 오픈채팅 참여하기</a>
+          </div>
+        </div>
+
       </div>
 
     </div>
-  </section>
-
   <!-- 06 FAQ -->
   <section id="faq">
     <p class="sec-eyebrow">06 · FAQ</p>

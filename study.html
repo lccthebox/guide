@@ -191,17 +191,62 @@
     .sched-img-wrap img { width:100%; display:block; }
     .sched-zoom-hint { text-align:center; font-size:12px; color:var(--gray-400); padding:8px; background:var(--gray-50); }
 
-    /* 토픽 스케줄 버튼 */
-    .topic-btn {
-      display:inline-flex; align-items:center; gap:8px;
-      background:var(--red); color:#fff;
-      font-size:13.5px; font-weight:600;
-      padding:11px 22px; border-radius:10px;
-      text-decoration:none; transition:background .15s;
-      margin-top:16px;
+    /* ── 새 토픽 이용 안내 ── */
+    .topic-guide {
+      margin-top:24px; padding:24px;
+      background:var(--white); border:1px solid var(--gray-200); border-radius:14px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      word-break:keep-all;
     }
-    .topic-btn:hover { background:var(--red-dark); }
-    .topic-note { font-size:12px; color:var(--gray-400); margin-top:8px; }
+    .topic-guide-badge {
+      display:inline-flex; align-items:center;
+      padding:4px 10px; margin-bottom:10px; border-radius:20px;
+      background:var(--red-light); border:1px solid #fecaca;
+      color:var(--red); font-size:11px; font-weight:700;
+    }
+    .topic-guide-title { font-size:18px; font-weight:800; color:var(--gray-900); margin-bottom:6px; }
+    .topic-guide-lead { font-size:13.5px; color:var(--gray-500); line-height:1.75; }
+    .topic-guide-link {
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      width:100%; margin:18px 0 16px; padding:14px 16px;
+      background:var(--red); color:var(--white); border-radius:10px;
+      text-decoration:none; font-size:13.5px; font-weight:700;
+      transition:background .15s;
+    }
+    .topic-guide-link:hover { background:var(--red-dark); }
+    .topic-guide-link:focus-visible { outline:3px solid #fecaca; outline-offset:3px; }
+    .topic-access-box {
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;
+      margin-bottom:16px;
+    }
+    .topic-access-item {
+      padding:12px; background:var(--gray-50); border:1px solid var(--gray-200);
+      border-radius:9px; text-align:center; color:var(--gray-700);
+      font-size:12.5px; font-weight:600;
+    }
+    .topic-warning {
+      padding:14px 16px; margin-bottom:20px;
+      background:#fff7ed; border:1px solid #fed7aa; border-radius:10px;
+      color:var(--gray-700); font-size:12.5px; line-height:1.75;
+    }
+    .topic-warning strong { color:var(--gray-900); }
+    .topic-chapters-title { font-size:14px; font-weight:800; color:var(--gray-900); margin-bottom:10px; }
+    .topic-chapters { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .topic-chapter {
+      padding:16px; border:1px solid var(--gray-200); border-radius:10px;
+      background:var(--white);
+    }
+    .topic-chapter-num { font-size:11px; font-weight:800; color:var(--red); letter-spacing:.08em; }
+    .topic-chapter h4 { margin:3px 0 5px; font-size:14px; color:var(--gray-900); }
+    .topic-chapter p { font-size:12.5px; color:var(--gray-500); line-height:1.7; }
+    .topic-original-note {
+      margin-top:10px; padding:12px 14px; border-radius:9px;
+      background:var(--red-light); color:var(--gray-700);
+      font-size:12.5px; line-height:1.7;
+    }
+    .topic-challenge { margin-top:16px; display:flex; flex-direction:column; gap:7px; }
+    .topic-challenge p { font-size:12.5px; color:var(--gray-700); line-height:1.65; }
+    .topic-guide-closing { margin-top:16px; font-size:13px; font-weight:700; color:var(--red); }
 
 
     /* ── 에티켓 리스트 ── */
@@ -497,6 +542,7 @@
 
       /* 홀딩 */
       .holding-cafe-grid { grid-template-columns:1fr; }
+      .topic-access-box, .topic-chapters { grid-template-columns:1fr; }
       .holding-steps { gap:6px; flex-wrap:wrap; justify-content:center; }
       .holding-step-arrow { display:none; }
       .holding-step { min-width:calc(50% - 6px); flex:unset; }
@@ -542,6 +588,8 @@
       section { padding:24px 16px; }
       .sec-title { font-size:18px; }
       .sec-sub { font-size:12.5px; }
+      .topic-guide { padding:18px 14px; }
+      .topic-guide-title { font-size:16px; }
 
       /* 홀딩 */
       .holding-step { min-width:calc(50% - 4px); }
@@ -611,7 +659,7 @@
     .holding-comment-label { font-size:11px; font-weight:700; color:var(--gray-400); letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
     .holding-comment-text { font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px; }
     .holding-comment-example { font-size:12.5px; color:var(--gray-500); }
-    .holding-cafe-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .holding-cafe-grid { display:grid; grid-template-columns:1fr; gap:14px; }
     .holding-cafe-card {
       background:#fff; border:1.5px solid #22c55e33; border-radius:12px;
       padding:16px 18px; font-size:13px; display:flex; flex-direction:column; gap:6px;
@@ -624,21 +672,7 @@
       text-decoration:none; transition:all .15s; background:#fff;
     }
     .holding-cafe-link:hover { border-color:#16a34a; color:#15803d; background:#f0fdf4; }
-    .holding-cafe-link.highlight { border-color:#16a34a33; color:#15803d; background:#f0fdf4; font-weight:700; }
     .holding-cafe-link-icon { font-size:14px; flex-shrink:0; }
-    .holding-cafe-tip {
-      background:#f0fdf4; border:1.5px solid #22c55e33; border-radius:12px;
-      padding:16px 18px; display:flex; flex-direction:column; gap:10px;
-    }
-    .holding-cafe-tip-title { font-size:13px; font-weight:700; color:#15803d; }
-    .holding-cafe-tip-item { font-size:12.5px; color:var(--gray-600); line-height:1.6; }
-    .holding-cafe-btn {
-      display:inline-flex; align-items:center; gap:6px; margin-top:4px;
-      background:#15803d; color:#fff; border-radius:8px;
-      padding:9px 16px; font-size:12.5px; font-weight:600;
-      text-decoration:none; transition:background .15s;
-    }
-    .holding-cafe-btn:hover { background:#166534; }
 
   
     .price-cards-wrap { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:8px; }
@@ -729,6 +763,9 @@
   .hero h2 { font-size: 27px !important; line-height: 1.12 !important; }
   .step-row { gap: 14px; }
   .step-action-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+  .holding-steps { display:grid; grid-template-columns:1fr 1fr; gap:14px 8px; }
+  .holding-step { min-width:0; width:100%; }
+  .holding-step-arrow { display:none; }
 }
 
 </style>
@@ -760,13 +797,13 @@
     <div class="hero">
       <div class="hero-kicker">등록 완료 · Welcome</div>
       <h2>더박스 멤버가<br>되어주셔서 <span>감사합니다.</span></h2>
-      <p class="hero-desc">등록이 완료되었습니다. 첫 참여 전 네이버 카페 가입과 오늘의 테이블 확인 방법부터 먼저 확인해 주세요.</p>
+      <p class="hero-desc">등록이 완료되었습니다. 첫 참여 전 네이버 카페 가입, 오늘의 테이블 확인 방법과 새로운 토픽 이용 방법을 먼저 확인해 주세요.</p>
       <div class="hero-links">
         <a href="https://theboxis.com" target="_blank" class="hero-link-btn">🌐 웹사이트 바로가기</a>
         <a href="https://www.instagram.com/thebox_daegu/" target="_blank" class="hero-link-btn hero-link-insta">📸 인스타그램 바로가기</a>
         <a href="https://cafe.naver.com/theboxis" target="_blank" class="hero-link-btn">☕ 네이버 카페 바로가기</a>
       </div>
-      <div class="guide-updated">최종 업데이트 · 2026.09.10</div>
+      <div class="guide-updated">최종 업데이트 · 2026.09.30</div>
       <div class="hero-notice"><strong>7·8층</strong>은 전문 강사의 '회화 아카데미 수업', <strong>6층</strong>은 외국인 친구들과 함께하는 '순수 자율 스터디' 공간으로 분리 운영되며, 외국인들은 교육의 목적을 가지는 선생님/강사가 아닙니다.</div>
     </div>
 
@@ -784,7 +821,7 @@
           <div class="step-num">1</div>
           <div class="step-content">
             <h4>네이버 카페 가입 &amp; 등업</h4>
-            <p>더박스 공식 카페에 가입 후 게시판에 <strong>성함 / 연락처 뒷번호 4자리 / 수강하시는 반</strong>을 작성해 주세요. 등업 후 홀딩 신청 및 토픽 확인이 가능합니다.</p>
+            <p>더박스 공식 카페에 가입 후 게시판에 <strong>성함 / 연락처 뒷번호 4자리 / 수강하시는 반</strong>을 작성해 주세요. 등업 후 홀딩 신청이 가능합니다.</p>
             <a href="https://cafe.naver.com/theboxis" target="_blank" class="step-action-btn">☕ 네이버 카페 가입하기 →</a>
           </div>
         </div>
@@ -811,7 +848,7 @@
           <div class="step-num">4</div>
           <div class="step-content">
             <h4>단체 카카오톡 초대 확인</h4>
-            <p>첫 참여 후 리더님께서 반 단체 카카오톡에 초대해 드립니다. 이후 공지와 토픽 안내를 단체 톡에서 확인해 주세요.</p>
+            <p>첫 참여 후 리더님께서 반 단체 카카오톡에 초대해 드립니다. 이후 반별 공지와 운영 안내를 단체 톡에서 확인해 주세요.</p>
             <a href="https://www.instagram.com/thebox_daegu/" target="_blank" class="step-link">📸 @thebox_daegu 공지도 확인하기 →</a>
           </div>
         </div>
@@ -847,8 +884,47 @@
           </tbody>
         </table>
       </div>
-      <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/189?viewType=L" target="_blank" class="topic-btn">📅 월별 토픽 스케줄 보기 →</a>
-      <p class="topic-note">네이버 카페 &gt; 토픽 자료 &gt; ★월별 토픽★ 에서 확인하세요</p>
+      <div class="topic-guide" aria-labelledby="topic-guide-title">
+        <div class="topic-guide-badge">10월부터 변경</div>
+        <h3 class="topic-guide-title" id="topic-guide-title">📢 새로운 토픽 이용 안내</h3>
+        <p class="topic-guide-lead">10월부터 토픽 접속 및 이용 방법이 새롭게 변경됩니다.</p>
+
+        <a href="https://thebox-talkflow.vercel.app/talkflow/member/" target="_blank" rel="noopener noreferrer" class="topic-guide-link">
+          <span>🔗 새로운 토픽 접속하기</span><span aria-hidden="true">→</span>
+        </a>
+
+        <div class="topic-access-box" aria-label="접속 정보">
+          <div class="topic-access-item">성함</div>
+          <div class="topic-access-item">휴대폰 번호</div>
+          <div class="topic-access-item">생년월일 (YYYYMMDD)</div>
+        </div>
+
+        <div class="topic-warning">
+          <strong>⚠️ 접속이 되지 않는 경우</strong><br>
+          등록된 정보가 실제 정보와 다르거나 일부 정보가 누락되어 있을 수 있습니다. 정확한 성함 / 번호 / 생년월일과 함께 더박스로 문의해 주시면 확인 후 바로 수정해드리겠습니다.
+        </div>
+
+        <div class="topic-chapters-title">📚 새로운 토픽은 이렇게 진행됩니다!</div>
+        <div class="topic-chapters">
+          <div class="topic-chapter">
+            <div class="topic-chapter-num">01</div>
+            <h4>STORY 또는 RANDOM</h4>
+            <p>가볍게 시작하면서 말하기에 집중하는 첫 번째 장입니다.</p>
+          </div>
+          <div class="topic-chapter">
+            <div class="topic-chapter-num">02</div>
+            <h4>READ &amp; DISCUSS</h4>
+            <p>내용을 읽고 서로의 생각과 의견을 나누는 두 번째 장입니다.</p>
+          </div>
+        </div>
+        <p class="topic-original-note">특히 두 번째 장은 실제 뉴스기사를 기반으로 만든 주제입니다. 함께 연결되어 있는 원문 기사도 읽어보시면 토픽을 더 재미있게 즐기실 수 있습니다 🙌</p>
+
+        <div class="topic-challenge">
+          <p>✅ 이번 달에는 몇 개의 토픽을 읽었는지 직접 체크해보세요!</p>
+          <p>✅ 내가 참여하는 요일뿐만 아니라 매달 올라오는 모든 토픽 읽기 챌린지에도 도전해보세요 🔥</p>
+        </div>
+        <p class="topic-guide-closing">10월부터 새롭게 바뀌는 토픽, 많이 활용해 주세요!</p>
+      </div>
     </section>
 
     <!-- 03 에티켓 -->
@@ -861,7 +937,7 @@
         <div class="etiq-row"><span class="etiq-icon">🚫</span><div><strong>민감한 주제는 피해주세요.</strong> 종교, 정치, 인종, 개인사 같은 주제 대신 모두가 함께할 수 있는 가벼운 주제로 대화해 주세요.</div></div>
         <div class="etiq-row"><span class="etiq-icon">🔊</span><div><strong>적당한 볼륨으로 대화해 주세요.</strong> 목소리가 너무 크면 다른 그룹에 방해가 될 수 있어요.</div></div>
         <div class="etiq-row"><span class="etiq-icon">👂</span><div><strong>모든 사람이 말할 수 있도록 배려해 주세요.</strong> 혼자 말하기보다 상대의 말도 귀 기울여 주세요.</div></div>
-        <div class="etiq-row"><span class="etiq-icon">📋</span><div><strong>토픽 카드를 활용해 보세요.</strong> 무슨 말을 해야 할지 모르겠다면 준비된 토픽이 도움이 돼요.</div></div>
+        <div class="etiq-row"><span class="etiq-icon">📋</span><div><strong>새 토픽 페이지를 활용해 보세요.</strong> 무슨 말을 해야 할지 모르겠다면 STORY와 RANDOM부터 가볍게 시작해 보세요.</div></div>
         <div class="etiq-row"><span class="etiq-icon">📵</span><div><strong>대화 중 핸드폰 사용을 자제해 주세요.</strong> 함께 이야기하는 데 집중해 주세요.</div></div>
       </div>
       <div class="etiq-violation">
@@ -926,9 +1002,6 @@
       <div class="holding-cafe-grid">
         <div class="holding-cafe-card">
           <div class="holding-cafe-section-title">[대구] 원어민 스터디</div>
-          <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/189?viewType=L" target="_blank" class="holding-cafe-link highlight">
-            <span class="holding-cafe-link-icon">📅</span> 이번주 스터디토픽
-          </a>
           <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/147?viewType=L" target="_blank" class="holding-cafe-link">
             <span class="holding-cafe-link-icon">📋</span> [홀딩신청] 월수반
           </a>
@@ -938,13 +1011,6 @@
           <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/149" target="_blank" class="holding-cafe-link">
             <span class="holding-cafe-link-icon">📋</span> [홀딩신청] 주말반
           </a>
-        </div>
-        <div class="holding-cafe-tip">
-          <div class="holding-cafe-tip-title">💡 카페 활용 팁</div>
-          <div class="holding-cafe-tip-item">📌 <strong>홀딩 신청</strong>은 수업 전날까지 해당 반 게시판에서!</div>
-          <div class="holding-cafe-tip-item">📅 <strong>이번주 스터디토픽</strong>은 미리 확인해두면 수업이 더 즐거워요.</div>
-          <div class="holding-cafe-tip-item">📚 <strong>영어 공부자료 · 티칭자료</strong>도 카페에서 확인할 수 있어요.</div>
-          <a href="https://cafe.naver.com/theboxis" target="_blank" class="holding-cafe-btn">☕ 네이버 카페 바로가기 →</a>
         </div>
       </div>
     </section>
@@ -1223,7 +1289,7 @@
   <div class="modal-overlay" id="modal-holding" onclick="closeModalOutside(event,'modal-holding')">
     <div class="modal-box">
       <div class="modal-header">
-        🔒 토픽확인 및 홀딩신청 안내
+        🔒 홀딩신청 안내
         <button class="modal-close" onclick="closeModal('holding')">×</button>
       </div>
       <div class="modal-body">

@@ -767,6 +767,40 @@
   .holding-step-arrow { display:none; }
 }
 
+/* Lounge-first registration guide */
+.lounge-primary-link {
+  background: linear-gradient(135deg, #5849dc 0%, #372d9c 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 28px rgba(55,45,156,.22);
+}
+.lounge-primary-link:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(55,45,156,.28); }
+.step-help { margin-top: 12px; padding: 14px 16px; border-radius: 14px; background: #f4f2ff; color: #4a4660; line-height: 1.65; }
+.step-help strong { color: #332b8f; }
+.holding-lounge-card { margin-top: 22px; padding: 24px; border-radius: 20px; background: linear-gradient(145deg,#f5f3ff 0%,#fff 72%); border: 1px solid #ded9ff; }
+.holding-lounge-card h3 { margin: 0 0 8px; font-size: 20px; }
+.holding-lounge-card p { margin: 0; color: #66697a; line-height: 1.65; }
+.holding-lounge-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.holding-lounge-action { padding: 18px; border-radius: 16px; background: #fff; border: 1px solid #e3e1ef; }
+.holding-lounge-action strong { display:block; margin-bottom:6px; color:#17182b; }
+.holding-lounge-action span { color:#737588; font-size:14px; line-height:1.55; }
+.holding-lounge-note { margin-top: 16px; padding: 14px 16px; border-radius: 14px; background:#fff1f1; color:#9f2d35; font-weight:700; }
+.topic-review-card { margin-top: 18px; padding: 20px; border-radius: 18px; background: linear-gradient(135deg,#fff 0%,#f2f8f4 100%); border: 1px solid #d9eadf; }
+.topic-review-card h4 { margin:0 0 8px; font-size:18px; }
+.topic-review-card p { margin:0 0 14px; color:#66697a; line-height:1.65; }
+.topic-review-link { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:12px; background:#176b4d; color:#fff !important; font-weight:700; text-decoration:none; }
+.club-feature { position:relative; overflow:hidden; padding:32px; border-radius:24px; color:#fff; background:linear-gradient(135deg,#172554 0%,#4033b7 58%,#6a5be8 100%); box-shadow:0 18px 42px rgba(23,37,84,.18); }
+.club-feature::after { content:""; position:absolute; width:260px; height:260px; right:-90px; top:-110px; border-radius:50%; background:rgba(255,255,255,.10); box-shadow:0 0 0 34px rgba(255,255,255,.055); }
+.club-feature-copy { position:relative; z-index:1; max-width:680px; }
+.club-feature-kicker { display:inline-flex; padding:7px 11px; border-radius:999px; background:rgba(255,255,255,.14); font-size:12px; font-weight:800; letter-spacing:.08em; }
+.club-feature h3 { margin:18px 0 10px; font-size:28px; line-height:1.25; }
+.club-feature p { margin:0; color:rgba(255,255,255,.78); line-height:1.7; }
+.club-feature .club-join-btn { margin-top:24px; background:#fff; color:#352b9a !important; box-shadow:none; }
+@media(max-width:640px) {
+  .holding-lounge-actions { grid-template-columns:1fr; }
+  .club-feature { padding:24px 20px; border-radius:20px; }
+  .club-feature h3 { font-size:23px; }
+}
+
 </style>
 </head>
 <body>
@@ -797,13 +831,13 @@
     <div class="hero">
       <div class="hero-kicker">등록 완료 · Welcome</div>
       <h2>더박스 멤버가<br>되어주셔서 <span>감사합니다.</span></h2>
-      <p class="hero-desc">등록이 완료되었습니다. 첫 참여 전 네이버 카페 가입, 오늘의 테이블 확인 방법과 더박스 토픽 이용 방법을 먼저 확인해 주세요.</p>
+      <p class="hero-desc">등록이 완료되었습니다. 첫 참여 전 멤버 라운지를 홈 화면에 추가하고, 일정·홀딩·잔여석·토픽 이용 방법을 확인해 주세요.</p>
       <div class="hero-links">
+        <a href="https://conversation-study-admin.vercel.app/member.html" target="_blank" rel="noopener noreferrer" class="hero-link-btn lounge-primary-link">멤버 라운지 시작하기 →</a>
         <a href="https://theboxis.com" target="_blank" class="hero-link-btn">🌐 웹사이트 바로가기</a>
         <a href="https://www.instagram.com/thebox_daegu/" target="_blank" class="hero-link-btn hero-link-insta">📸 인스타그램 바로가기</a>
-        <a href="https://cafe.naver.com/theboxis" target="_blank" class="hero-link-btn">☕ 네이버 카페 바로가기</a>
       </div>
-      <div class="guide-updated">최종 업데이트 · 2026.09.30</div>
+      <div class="guide-updated">최종 업데이트 · 2026.10.29</div>
       <div class="hero-notice"><strong>7·8층</strong>은 전문 강사의 '회화 아카데미 수업', <strong>6층</strong>은 외국인 친구들과 함께하는 '순수 자율 스터디' 공간으로 분리 운영되며, 외국인들은 교육의 목적을 가지는 선생님/강사가 아닙니다.</div>
     </div>
 
@@ -820,36 +854,32 @@
         <div class="step-row">
           <div class="step-num">1</div>
           <div class="step-content">
-            <h4>네이버 카페 가입 &amp; 등업</h4>
-            <p>더박스 공식 카페에 가입 후 게시판에 <strong>성함 / 연락처 뒷번호 4자리 / 수강하시는 반</strong>을 작성해 주세요. 등업 후 홀딩 신청이 가능합니다.</p>
-            <a href="https://cafe.naver.com/theboxis" target="_blank" class="step-action-btn">☕ 네이버 카페 가입하기 →</a>
+            <h4>멤버 라운지 접속</h4>
+            <p>앞으로 일정 확인과 홀딩·잔여석 신청은 모두 <strong>더박스 멤버 라운지</strong>에서 진행합니다.</p>
+            <a href="https://conversation-study-admin.vercel.app/member.html" target="_blank" rel="noopener noreferrer" class="step-action-btn lounge-primary-link">멤버 라운지 접속하기 →</a>
           </div>
         </div>
         <div class="step-row">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h4>참여 당일 · Where to go Today? 확인</h4>
-            <p>참여하는 날에는 카페에서 본인의 이름을 찾아 <strong>오늘 배정된 테이블</strong>을 확인해 주세요.</p>
-            <span class="step-tag">🅻 Lobby</span>
-            <span class="step-tag" style="margin-left:6px;">🅐 Room A</span>
-            <span class="step-tag" style="margin-left:6px;">🅑 Room B</span><br>
-            <a href="https://cafe.naver.com/theboxis" target="_blank" class="step-action-btn">오늘의 테이블 확인하기 →</a>
+            <h4>휴대전화 홈 화면에 추가</h4>
+            <p>카카오톡 안에서 바로 사용하지 말고 <strong>크롬 또는 Safari</strong>로 열어 홈 화면에 추가해 주세요.</p>
+            <div class="step-help"><strong>갤럭시</strong> · 크롬으로 열기 → 우측 상단 ⋮ → 홈 화면에 추가<br><strong>아이폰</strong> · Safari로 열기 → 공유 버튼 → 홈 화면에 추가</div>
           </div>
         </div>
         <div class="step-row">
           <div class="step-num">3</div>
           <div class="step-content">
-            <h4>첫 스터디 참여</h4>
-            <p>확인한 테이블로 이동해 스터디에 참여해 주세요. 처음 오셨다면 위치가 헷갈릴 수 있으니 6층 데스크에 문의해 주세요.</p>
-            <span class="step-tag">📍 6층</span>
+            <h4>등록 정보로 로그인</h4>
+            <p><strong>등록된 이름 / 휴대전화 번호 / 생년월일 8자리</strong>를 입력해 주세요. 개인 휴대전화에서는 자동 입장을 선택하면 다음부터 더 편하게 이용할 수 있습니다.</p>
+            <div class="step-help">로그인이 되지 않으면 등록된 번호나 생년월일이 실제 정보와 다를 수 있습니다. 반복 입력하지 말고 <strong>더박스로 연락해 등록 정보를 확인</strong>해 주세요.</div>
           </div>
         </div>
         <div class="step-row">
           <div class="step-num">4</div>
           <div class="step-content">
-            <h4>단체 카카오톡 초대 확인</h4>
-            <p>첫 참여 후 리더님께서 반 단체 카카오톡에 초대해 드립니다. 이후 반별 공지와 운영 안내를 단체 톡에서 확인해 주세요.</p>
-            <a href="https://www.instagram.com/thebox_daegu/" target="_blank" class="step-link">📸 @thebox_daegu 공지도 확인하기 →</a>
+            <h4>마이페이지에서 우리 반 확인</h4>
+            <p>로그인 후 마이페이지에서 참여 중인 반과 <strong>반 오픈채팅방</strong>을 확인할 수 있습니다. 첫 방문 시 위치가 헷갈리면 6층 데스크에 문의해 주세요.</p>
           </div>
         </div>
       </div>
@@ -923,6 +953,11 @@
           <p>✅ 이번 달에는 몇 개의 토픽을 읽었는지 직접 체크해보세요!</p>
           <p>✅ 내가 참여하는 요일뿐만 아니라 매달 올라오는 모든 토픽 읽기 챌린지에도 도전해보세요 🔥</p>
         </div>
+        <div class="topic-review-card">
+          <h4>스터디가 끝난 뒤에는 토픽 리뷰로 복습하세요</h4>
+          <p>네이버 카페의 <strong>스터디 토픽 리뷰</strong> 게시판에는 실제 스터디에서 사용한 토픽의 핵심 표현과 복습 콘텐츠가 올라옵니다.</p>
+          <a href="https://cafe.naver.com/theboxis" target="_blank" rel="noopener noreferrer" class="topic-review-link">스터디 토픽 리뷰 보기 →</a>
+        </div>
       </div>
     </section>
 
@@ -967,50 +1002,17 @@
         </div>
       </div>
 
-      <!-- 신청 방법 -->
-      <div class="holding-steps-label">📋 홀딩 신청 방법</div>
-      <div class="holding-steps">
-        <div class="holding-step">
-          <div class="holding-step-num">1</div>
-          <div class="holding-step-text">네이버 카페 접속</div>
+      <div class="holding-lounge-card">
+        <h3>홀딩은 멤버 라운지에서 신청해 주세요</h3>
+        <p>네이버 카페 댓글이 아닌 라운지에서 날짜를 선택하면 신청 상태까지 한 번에 확인할 수 있습니다.</p>
+        <div class="holding-lounge-actions">
+          <div class="holding-lounge-action"><strong>1. 라운지 로그인</strong><span>등록된 이름·휴대전화 번호·생년월일로 입장합니다.</span></div>
+          <div class="holding-lounge-action"><strong>2. 홀딩 날짜 선택</strong><span>홈 화면에서 홀딩 신청을 누르고 참석이 어려운 날짜를 선택합니다.</span></div>
+          <div class="holding-lounge-action"><strong>3. 신청 내용 확인</strong><span>날짜와 안내사항을 확인한 뒤 홀딩 신청을 완료합니다.</span></div>
+          <div class="holding-lounge-action"><strong>4. 상태 확인</strong><span>신청 결과와 일정 반영 여부를 라운지에서 확인합니다.</span></div>
         </div>
-        <div class="holding-step-arrow">›</div>
-        <div class="holding-step">
-          <div class="holding-step-num">2</div>
-          <div class="holding-step-text">해당 반 게시판</div>
-        </div>
-        <div class="holding-step-arrow">›</div>
-        <div class="holding-step">
-          <div class="holding-step-num">3</div>
-          <div class="holding-step-text">월별 홀딩 신청 게시글</div>
-        </div>
-        <div class="holding-step-arrow">›</div>
-        <div class="holding-step">
-          <div class="holding-step-num">4</div>
-          <div class="holding-step-text">댓글에 작성</div>
-        </div>
-      </div>
-      <div class="holding-comment-box">
-        <div class="holding-comment-label">댓글 작성 예시</div>
-        <div class="holding-comment-text">성함 / 수강하시는 반 / 홀딩 날짜</div>
-        <div class="holding-comment-example">예) 홍길동 / 스터디 월수반 / 4월 7일, 4월 14일</div>
-      </div>
-
-      <!-- 카페 구조 안내 -->
-      <div class="holding-steps-label" style="margin-top:20px;">☕ 네이버 카페 게시판 구조</div>
-      <div class="holding-cafe-grid">
-        <div class="holding-cafe-card">
-          <div class="holding-cafe-section-title">[대구] 원어민 스터디</div>
-          <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/147?viewType=L" target="_blank" class="holding-cafe-link">
-            <span class="holding-cafe-link-icon">📋</span> [홀딩신청] 월수반
-          </a>
-          <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/148" target="_blank" class="holding-cafe-link">
-            <span class="holding-cafe-link-icon">📋</span> [홀딩신청] 화목반
-          </a>
-          <a href="https://cafe.naver.com/f-e/cafes/29533704/menus/149" target="_blank" class="holding-cafe-link">
-            <span class="holding-cafe-link-icon">📋</span> [홀딩신청] 주말반
-          </a>
-        </div>
+        <div class="holding-lounge-note">네이버 카페 댓글로 작성한 홀딩은 접수되지 않습니다.</div>
+        <a href="https://conversation-study-admin.vercel.app/member.html" target="_blank" rel="noopener noreferrer" class="step-action-btn lounge-primary-link" style="margin-top:18px;">멤버 라운지에서 홀딩 신청하기 →</a>
       </div>
     </section>
 
@@ -1183,15 +1185,12 @@
       <div class="sec-eyebrow">07 · THEBOX GO!</div>
       <h2 class="sec-title">더박스go! 활동 안내</h2>
       <p class="sec-sub">더박스의 다양한 커뮤니티 활동을 한곳에서 만나보세요.</p>
-      <div class="club-grid-wrap">
-        <div class="club-row-full">
-          <div class="club-card">
-            <div class="club-body">
-              <h4 class="club-title">클럽부터 이벤트까지, 더박스go!</h4>
-              <p class="club-subtitle">클럽, 이벤트, 파티, 아웃팅의 최신 일정과 모집 정보를 확인하고 간편하게 신청할 수 있습니다.</p>
-              <a href="https://thebox-go.vercel.app/" target="_blank" rel="noopener noreferrer" class="club-join-btn">더박스go! 바로가기 →</a>
-            </div>
-          </div>
+      <div class="club-feature">
+        <div class="club-feature-copy">
+          <span class="club-feature-kicker">COMMUNITY · THEBOX GO!</span>
+          <h3>영어 밖에서도, 함께할 이유가 더 많아집니다.</h3>
+          <p>클럽, 이벤트, 파티, 아웃팅의 최신 일정과 모집 정보를 한곳에서 확인하고 간편하게 신청해 보세요.</p>
+          <a href="https://thebox-go.vercel.app/" target="_blank" rel="noopener noreferrer" class="club-join-btn">더박스go! 둘러보기 →</a>
         </div>
       </div>
     </section>
@@ -1239,7 +1238,7 @@
             <span class="arr">›</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">홀딩에 횟수 제한이 없어 장기 홀딩은 가능하지만, 사용기한은 있으니 이 점 유의하시고 사용해주세요.</div>
+            <div class="faq-body-inner">멤버 라운지에서 홀딩 날짜를 신청해 주세요. 장기간 참여가 어려운 경우에는 크레딧 사용기한 확인을 위해 6층 데스크로 먼저 문의해주세요.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -1249,7 +1248,7 @@
             <span class="arr">›</span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">참여하는 그룹의 원어민과 한국인 비율을 맞추고 있기 때문에, 일회성으로 그룹을 옮겨다니는 것은 어렵습니다. 하지만 그룹을 아예 바꾸시는 것은 가능하니 편하게 말씀해주세요.</div>
+            <div class="faq-body-inner">멤버 라운지에서 열린 잔여석을 확인하고 추가 참여를 신청할 수 있습니다. 대기 신청은 좌석 확정이 아니므로 라운지에서 최종 상태를 확인한 뒤 참여해주세요.</div>
           </div>
         </div>
       </div>

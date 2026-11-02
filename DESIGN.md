@@ -46,9 +46,17 @@
 - 레이아웃: 데스크톱 2열, 모바일 1열
 - 접근성: 시각 순서와 DOM 읽기 순서를 동일하게 유지한다.
 
+### 역할별 모바일 가이드
+- 구조: 메인 페이지의 4개 역할 탭과 역할별 독립 공유 페이지
+- 역할: 멤버, 리더, 한국어 튜터, Native Teacher
+- 상태: 기본, hover, focus-visible, 선택, 비선택, 숨김 패널
+- 레이아웃: 데스크톱 탭 4열·카드 2열, 모바일 탭 2열·카드 1열
+- 상호작용: 클릭과 좌우 방향키·Home·End로 탭을 전환하며 선택된 패널만 노출한다.
+- 접근성: `tablist`/`tab`/`tabpanel`, `aria-selected`, `aria-controls`, roving tabindex를 사용한다.
+
 ## 6. Motion & Interaction
 
-상태 변화는 기존 150–180ms 전환만 사용한다. 링크 hover는 배경·테두리·색상으로만 의미를 전달하며, 장식 목적의 애니메이션은 추가하지 않는다. `prefers-reduced-motion` 사용자는 부드러운 스크롤과 전환을 비활성화한다.
+상태 변화는 기존 150–180ms 전환만 사용한다. 링크 hover는 배경·테두리·색상으로만 의미를 전달하며, 탭 패널은 180ms의 짧은 opacity/translate 진입만 사용한다. `prefers-reduced-motion` 사용자는 부드러운 스크롤과 전환을 비활성화한다.
 
 ## 7. Depth & Surface
 

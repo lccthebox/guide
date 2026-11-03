@@ -10,7 +10,8 @@
   <meta property="og:description" content="더박스 원어민 회화스터디 등록 안내 가이드입니다."/>
   <meta property="og:image" content="https://raw.githubusercontent.com/lccthebox/TheBoxAcademy/refs/heads/main/theboxlogo.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet"/>
   <style>
     :root {
       --red:        #e03131;
@@ -31,7 +32,7 @@
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; overflow-x:hidden; }
-    body { font-family:'Noto Sans KR',sans-serif; background:var(--white); color:var(--gray-900); line-height:1.6; overflow-x:hidden; }
+    body { font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif; background:var(--white); color:var(--gray-900); line-height:1.6; overflow-x:hidden; }
 
     img { max-width:100%; height:auto; display:block; }
     a { -webkit-tap-highlight-color:transparent; }
@@ -841,6 +842,74 @@
 @media (prefers-reduced-motion:reduce) { .role-guide-panel { animation:none; } .role-guide-tab { transition:none; } }
 
 </style>
+<style data-guide-redesign="20261103">
+  :root { --red:#e31b23; --red-mid:#e31b23; --red-light:#fff1f1; --red-pale:#f8d7d9; --red-dark:#b51219; --gray-50:#f7f4ee; --gray-100:#efebe4; --gray-200:#d8d3cc; --gray-400:#8a857e; --gray-500:#6f6a64; --gray-700:#34312e; --gray-900:#111; --white:#fffdf9; --nav-w:224px; }
+  body,button,input,select,textarea { font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif; }
+  body { background:var(--gray-50); color:var(--gray-900); font-size:16px; }
+  .sidebar { background:var(--white); border-right:1px solid var(--gray-200); box-shadow:none; }
+  .sidebar-top { padding:30px 24px 24px; }
+  .sidebar-top .label { color:var(--red); font-weight:800; }
+  .nav-section { padding-block:18px; }
+  .nav-link { border-radius:0; padding:10px 12px; font-size:13px; font-weight:650; }
+  .nav-link .ico { display:none; }
+  .nav-link.active { background:var(--gray-100); color:var(--gray-900); box-shadow:inset 3px 0 0 var(--red); }
+  main,footer { max-width:1180px; }
+  .hero { min-height:620px; padding:88px 56% 64px 64px; background:var(--white); display:flex; flex-direction:column; justify-content:center; }
+  .hero::before { inset:48px 0 48px 50%; background-image:linear-gradient(rgba(17,17,17,.04),rgba(17,17,17,.04)),url('boardgame.jpg'); background-size:cover; background-position:62% center; opacity:1; }
+  .hero h2 { max-width:520px; font-size:clamp(48px,5vw,68px); font-weight:900; letter-spacing:-.055em; line-height:1.06; }
+  .hero h2 span { color:var(--gray-900); }
+  .hero-desc { max-width:430px; margin-top:24px; font-size:16px; line-height:1.75; }
+  .hero-link-btn { min-height:46px; border-radius:0; box-shadow:none; }
+  .lounge-primary-link { background:var(--red)!important; border-color:var(--red)!important; border-radius:0!important; box-shadow:none!important; }
+  .hero-notice { border:0; border-top:1px solid var(--gray-200); border-radius:0; background:transparent; padding:18px 0 0; }
+  section { padding:88px 64px; background:var(--white)!important; }
+  section:nth-child(even) { background:var(--gray-50)!important; }
+  .sec-eyebrow { font-weight:800; letter-spacing:.14em; }
+  .sec-title { max-width:720px; font-size:clamp(30px,3.4vw,42px); font-weight:900; letter-spacing:-.045em; line-height:1.18; }
+  .sec-sub { max-width:680px; font-size:15px; line-height:1.75; }
+  .step-row { gap:28px; padding:26px 0; border-color:var(--gray-200); }
+  .step-num,.role-guide-card-number { border-radius:0; background:var(--red); }
+  .step-content h4 { font-size:18px; }
+  .step-content p { font-size:14.5px; }
+  .step-help,.onboarding-after-note,.onboarding-done { border-radius:0; box-shadow:none; }
+  .role-guide-tabs,#guide-panel-leader,#guide-panel-tutor,#guide-panel-native { display:none!important; }
+  .role-guide-head { padding:0 0 24px; border-radius:0; border-bottom:1px solid var(--gray-900); background:transparent; color:var(--gray-900); }
+  .role-guide-head h3 { font-size:26px; font-weight:850; }
+  .role-guide-head p { color:var(--gray-500); font-size:14px; }
+  .role-guide-badge { display:none; }
+  .role-guide-grid { grid-template-columns:1fr; gap:0; border-top:1px solid var(--gray-200); }
+  .role-guide-card { display:grid; grid-template-columns:44px minmax(180px,.65fr) minmax(0,1.35fr); gap:22px; align-items:start; padding:26px 0; border:0; border-bottom:1px solid var(--gray-200); border-radius:0; background:transparent; }
+  .role-guide-card-number { margin:0; color:#fff; }
+  .role-guide-card h4 { margin:2px 0 6px; font-size:19px; }
+  .role-guide-path { grid-column:2; margin:0; }
+  .role-guide-card ol { grid-column:3; grid-row:1 / span 2; font-size:14px; }
+  .role-guide-note,.role-guide-common { border-radius:0; }
+  .role-guide-share { border-radius:0; }
+  .sched-table-wrap,.topic-guide,.topic-review-card,.holding-lounge-card,.holding-lounge-action { border-radius:0; box-shadow:none; }
+  .sched-table th { background:var(--gray-900); }
+  .club-feature { min-height:430px; padding:56px; border-radius:0; background:linear-gradient(90deg,rgba(17,17,17,.9) 0%,rgba(17,17,17,.68) 50%,rgba(17,17,17,.18) 100%),url('hikers.jpg') center/cover; box-shadow:none; display:flex; align-items:flex-end; }
+  .club-feature::after { display:none; }
+  .club-feature-copy { max-width:560px; }
+  .club-feature-kicker { padding:0; border-radius:0; background:transparent; }
+  .club-feature h3 { font-size:clamp(32px,4vw,48px); font-weight:900; }
+  .club-feature .club-join-btn { border-radius:0; }
+  @media(max-width:860px) {
+    main { max-width:none; }
+    .hero { min-height:auto; padding:48px 24px 0; display:block; }
+    .hero::before { position:relative; display:block; inset:auto; height:min(72vw,440px); margin:36px -24px 0; background-position:58% center; }
+    .hero h2 { font-size:42px; }
+    section { padding:64px 24px; }
+  }
+  @media(max-width:640px) {
+    .role-guide-card { grid-template-columns:36px 1fr; gap:14px; }
+    .role-guide-card h4,.role-guide-path { grid-column:2; }
+    .role-guide-card ol { grid-column:1 / -1; grid-row:auto; margin-top:4px; }
+    .price-cards-wrap { grid-template-columns:1fr; }
+    .price-card { min-width:0; }
+    .price-card-badge { max-width:calc(100% - 16px); white-space:normal; text-align:center; }
+    .club-feature { min-height:480px; padding:32px 24px; background-position:58% center; }
+  }
+</style>
 </head>
 <body>
 
@@ -870,12 +939,12 @@
     <!-- 히어로 -->
     <div class="hero">
       <div class="hero-kicker">등록 완료 · Welcome</div>
-      <h2>더박스 멤버가<br>되어주셔서 <span>감사합니다.</span></h2>
+      <h2>원어민회화스터디<br><span>등록 안내</span></h2>
       <p class="hero-desc">등록이 완료되었습니다. 첫 참여 전 멤버 라운지를 홈 화면에 추가하고, 일정·홀딩·잔여석·토픽 이용 방법을 확인해 주세요.</p>
       <div class="hero-links">
         <a href="https://conversation-study-admin.vercel.app/member.html" target="_blank" rel="noopener noreferrer" class="hero-link-btn lounge-primary-link">멤버 라운지 시작하기 →</a>
-        <a href="https://theboxis.com" target="_blank" class="hero-link-btn">🌐 웹사이트 바로가기</a>
-        <a href="https://www.instagram.com/thebox_daegu/" target="_blank" class="hero-link-btn hero-link-insta">📸 인스타그램 바로가기</a>
+        <a href="https://theboxis.com" target="_blank" class="hero-link-btn">웹사이트 바로가기</a>
+        <a href="https://www.instagram.com/thebox_daegu/" target="_blank" class="hero-link-btn hero-link-insta">인스타그램 바로가기</a>
       </div>
       <div class="guide-updated">최종 업데이트 · 2026.11.02</div>
       <div class="hero-notice"><strong>7·8층</strong>은 전문 강사의 '회화 아카데미 수업', <strong>6층</strong>은 외국인 친구들과 함께하는 '순수 자율 스터디' 공간으로 분리 운영되며, 외국인들은 교육의 목적을 가지는 선생님/강사가 아닙니다.</div>
@@ -926,11 +995,11 @@
       <div class="onboarding-after-note">💡 <strong>수강 중 레벨 또는 그룹 변경이 필요하다면</strong> 언제든지 6층 매니저에게 말씀해 주세요.</div>
     </section>
 
-    <!-- 역할별 모바일 라운지 사용법 -->
+    <!-- 일반 멤버 라운지 사용법 -->
     <section id="mobile-guide" class="role-guide" aria-labelledby="mobile-guide-title">
       <div class="sec-eyebrow">MOBILE LOUNGE GUIDE</div>
-      <h2 class="sec-title" id="mobile-guide-title">역할별 모바일 사용법</h2>
-      <p class="sec-sub role-guide-intro">본인 역할을 누르면 실제 라운지 화면의 메뉴 이름과 같은 순서로 안내가 열립니다. 멤버·리더·한국어 튜터·원어민 모두 휴대전화에서 그대로 따라 할 수 있습니다.</p>
+      <h2 class="sec-title" id="mobile-guide-title">라운지 사용법</h2>
+      <p class="sec-sub role-guide-intro">멤버 라운지에서 자주 사용하는 기능을 순서대로 확인하세요.</p>
 
       <div class="role-guide-tabs" role="tablist" aria-label="라운지 역할 선택">
         <button type="button" class="role-guide-tab" role="tab" id="guide-tab-member" aria-selected="true" aria-controls="guide-panel-member" tabindex="0" data-guide-role="member">멤버</button>
